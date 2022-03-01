@@ -1,0 +1,42 @@
+import datetime
+
+def input_date():
+    year = int(input('Enter a year '))
+    month = int(input('Enter a month '))
+    day = int(input('Enter a day '))
+    return datetime.date(year, month, day)
+
+def dmy(date):
+    date = str(date)
+    dm = date[8:] + date[5:7] + date[:4]
+    return dm
+
+def ymd(date):
+    date = date[:2] + "-" + date[2:4] + "-" +date[4:]
+    return date
+    
+l = []
+l1 = []
+
+d1 = input_date()
+d2 = input_date()
+diff = d2 - d1
+
+
+for i in range(diff.days + 1):
+    dmt = d1 + datetime.timedelta(i)
+    s = dmy(dmt)
+
+    if s==s[::-1]:
+        l.append(s)
+
+for i in l:
+    x = ymd(i)
+    l1.append(x)
+
+if not l1:
+    print(f"No Palindromes in between {d1} to {d2}")
+else:
+    print(f"Total nos of Palindromes in {d1} to {d2} is/are {len(l)} and they are {l1}")
+
+    
