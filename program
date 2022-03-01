@@ -22,7 +22,6 @@ d1 = input_date()
 d2 = input_date()
 diff = d2 - d1
 
-
 for i in range(diff.days + 1):
     dmt = d1 + datetime.timedelta(i)
     s = dmy(dmt)
@@ -38,5 +37,3 @@ if not l1:
     print(f"No Palindromes in between {d1} to {d2}")
 else:
     print(f"Total nos of Palindromes in {d1} to {d2} is/are {len(l)} and they are {l1}")
-
-    
